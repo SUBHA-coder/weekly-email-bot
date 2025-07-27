@@ -81,3 +81,23 @@ You can modify the following inside `app.py`:
 - **Subject and Body**: Change the contents of the email as per your needs
 
 ---
+📅 Cron Syntax Format:
+scss
+Copy
+Edit
+┌───────────── minute (0 - 59)
+│ ┌───────────── hour (0 - 23)
+│ │ ┌───────────── day of month (1 - 31)
+│ │ │ ┌───────────── month (1 - 12)
+│ │ │ │ ┌───────────── day of week (0 - 6) (Sunday=0)
+│ │ │ │ │
+│ │ │ │ │
+│ │ │ │ │
+* * * * *
+🔄 Common Cron Examples (in UTC):
+Purpose	Cron Expression	IST Equivalent
+Every Monday at 8:30 AM IST	0 3 * * 1	8:30 AM IST Monday
+Every Friday at 6:00 PM IST	30 12 * * 5	6:00 PM IST Friday
+Every day at 9:00 AM IST	30 3 * * *	9:00 AM IST Daily
+Every Sunday at 10:00 AM IST	30 4 * * 0	10:00 AM IST Sunday
+Every Wednesday at 4:45 PM IST	15 11 * * 3	4:45 PM IST Wednesday
