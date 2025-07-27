@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 def send_email():
     sender = os.environ['EMAIL']
     password = os.environ['PASSWORD']
-    recipients = ["recipient1@example.com", "recipient2@example.com"]
+    recipients = ["2230210@kiit.ac.in", "2230196@kiit.ac.in"]
 
     subject = "Weekly Update"
     body = "Hello! This is your weekly automated email."
