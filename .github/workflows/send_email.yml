@@ -1,0 +1,25 @@
+name: Weekly Email Automation
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'  # Every Monday at 8:30 AM IST (3:00 AM UTC)
+  workflow_dispatch:     # Optional: allows manual run
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Run email script
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: python app.py
